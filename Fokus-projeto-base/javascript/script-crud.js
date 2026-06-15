@@ -1,7 +1,7 @@
 // botao adicionar tarefa
 const buttonAddTask = document.querySelector('.app__button--add-task')
 const formAddTask = document.querySelector('.app__form-add-task')
-const textArea = document.querySelector('.app_form-textarea')
+const textArea = document.querySelector('.app__form-textarea')
 const tarefas = []
 
 buttonAddTask.addEventListener('click', () => {
@@ -14,5 +14,5 @@ formAddTask.addEventListener('submit', (evento) => {
         descricao: textArea.value
     }
     tarefas.push(tarefa)
-    localStorage.setItem('tarefas', tarefas)
+    localStorage.setItem('tarefas', JSON.stringify(tarefas))
 })
